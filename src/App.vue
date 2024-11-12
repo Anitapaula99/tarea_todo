@@ -1,13 +1,44 @@
 <template>
   <div id="app">
-    <!-- Barra de navegación con enlaces a diferentes rutas -->
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/addtask">Agregar Tarea</router-link> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container">
+        <router-link class="navbar-brand d-flex align-items-center" to="/">
+          <img src="@/assets/logo.png" alt="Vue logo" width="30" height="30" class="d-inline-block align-top me-2" />
+          Gestor de tareas 
+        </router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <router-link class="nav-link d-flex align-items-center" to="/addtask">
+                Añadir Tarea
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link d-flex align-items-center" to="/tasklist">
+               Lista de Tareas
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link d-flex align-items-center" to="/combinedview">
+                Vista Combinada
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <!-- Aquí se cargará el componente correspondiente a la ruta seleccionada -->
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
